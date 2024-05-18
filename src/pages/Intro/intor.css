@@ -1,0 +1,113 @@
+.intro-container{
+    width: 100%;
+    height: 100vh;
+    padding: 30px;
+    font-family: "Montserrat", sans-serif;
+    margin-bottom: 50px;
+}
+.intro-container .header {
+    display: flex;
+    width: 100%;
+    height: 50px;
+    justify-content: space-between;
+    align-items: center;
+}
+.intro-container .header .left-side{
+    display: flex;
+    gap: 100px;
+    align-items: center;
+}
+.intro-container .header .logo {
+    width: 40px;
+}
+.intro-container .header .left-side .links{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    list-style: none;
+}
+.intro-container .header .left-side .links .link{
+    position: relative;
+}
+.intro-container .header .left-side .links .link::after{
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+        transition: .3s;
+}
+.intro-container .header .left-side .links .link:hover::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background: #005DFF;
+    border-radius: 20px;
+    transition: .3s;
+}
+.intro-container .header .left-side .links .link a{
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 600;
+    color: #556E9D;
+}
+.intro-container .header .login-btn{
+    width: 80px;
+    height: 30px;
+    border: none;
+    background: #005DFF;
+    border-radius: 4px;
+    color: #FFFFFF;
+    font-size: 12px;
+    cursor: pointer;
+    transition: .3s;
+}
+.intro-container .header .login-btn:hover{
+    transition: .3s;
+    transform: scale(1.01);
+}
+.intro-container section{
+    display: flex;
+    width: 100%;
+    height: calc(100vh - 50px);
+    align-items: center;
+    padding: 20px;
+    padding: 30px;
+}
+
+.intro-container section .section-right-side{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+.section-left-side {
+    width: 50%;
+}
+.intro-container section .section-right-side img{
+    width:70%;
+    border-radius: 5px;
+    rotate: -5deg;
+}
+.intro-container section .section-left-side {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.intro-container section .section-left-side h1{
+    color: #092167;
+    font-weight: 800;
+}
+.intro-container section .section-left-side h2{
+    font-size: 20px;
+    color: #092167;
+}
+.intro-container section .section-left-side p{
+    font-size: 14px;
+    color: #4772a9;
+}
