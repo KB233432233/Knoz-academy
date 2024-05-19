@@ -61,7 +61,16 @@
     .OnlineCourses-section  {
         padding: 50px;
     }
+    .OnlineCourses-section .left-side {
+        align-items: center;
+    }
+    .OnlineCourses-section .left-side h1 {
+        font-size: 24px;
+    }
     .OnlineCourses-section .right-side {
         justify-content: flex-start;
+    }
+    .OnlineCourses-section .right-side img {
+        width: 100%;
     }
 }
