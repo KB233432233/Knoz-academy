@@ -9,6 +9,7 @@ import { LuClock9 } from "react-icons/lu";
 import { IoCheckmarkDoneCircle } from "react-icons/io5";
 import { BsCurrencyDollar } from "react-icons/bs";
 function Cards() {
+
   return (
     <div className="courses-section">
       <h1 className="courses-section-header">Enroll your favorite courses</h1>
