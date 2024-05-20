@@ -233,6 +233,7 @@
     width: 100%;
     overflow-y: scroll;
     align-self: center;
+    justify-content: start;
     margin-top: 40px;
 }
 
