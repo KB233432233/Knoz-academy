@@ -1,5 +1,5 @@
 import "./Cards.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import landing from '../../assets/360_F_306636176_KQbxttYdxWHsH3S6bYCD47NvVGdTL2xV.jpg'
 import html from '../../assets/what-is-html-3.webp'
 import css from '../../assets/CSS_Course.jpg'
@@ -9,6 +9,8 @@ import { LuClock9 } from "react-icons/lu";
 import { IoCheckmarkDoneCircle } from "react-icons/io5";
 import { BsCurrencyDollar } from "react-icons/bs";
 function Cards() {
+
+  const navigate = useNavigate();
 
   return (
     <div className="courses-section">
@@ -42,7 +44,7 @@ function Cards() {
                 <BsCurrencyDollar size={13} color="#6882AF" />
                 <p>course 120$</p>
               </div>
-              <button>Enroll now</button>
+              <button onClick={() => navigate('/0')}>Enroll now</button>
             </div>
           </div>
         </div>
@@ -67,7 +69,7 @@ function Cards() {
                 <BsCurrencyDollar size={13} color="#6882AF" />
                 <p>course 120$</p>
               </div>
-              <button>Enroll now</button>
+              <button onClick={() => navigate('/2')}>Enroll now</button>
             </div>
           </div>
         </div>
@@ -93,7 +95,7 @@ function Cards() {
                 <BsCurrencyDollar size={13} color="#6882AF" />
                 <p>course 120$</p>
               </div>
-              <button>Enroll now</button>
+              <button onClick={() => navigate('/1')}>Enroll now</button>
             </div>
           </div>
         </div>

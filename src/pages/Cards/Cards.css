@@ -206,6 +206,13 @@
     color: #5376A9;
     font-weight: 600;
 }
+
+.courses-section .courses-titles {
+    width: 100%;
+    overflow-x: scroll;
+    justify-content: center;
+}
+
 @media screen and (max-width : 400px){
     .courses-section .courses-cards {
     width: 100%;
@@ -228,10 +235,11 @@
     align-self: center;
     margin-top: 40px;
 }
+
 .courses-section .courses-titles .course-btn{
     padding: 3px 20px;
     display: block;
-    align-items: center;           
+    align-items: center;
     border: 1px solid #dae1f2;
     border-radius: 4px;
     cursor: pointer;
@@ -242,5 +250,6 @@
     transition: 0.3s;
 }
 }
+
 
 
