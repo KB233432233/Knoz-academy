@@ -1,20 +1,17 @@
 import "./Cards.css";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import landing from '../../assets/360_F_306636176_KQbxttYdxWHsH3S6bYCD47NvVGdTL2xV.jpg'
 import html from '../../assets/what-is-html-3.webp'
 import css from '../../assets/CSS_Course.jpg'
 import js from '../../assets/js.png'
-import { FaVideo } from "react-icons/fa";
-import { LuClock9 } from "react-icons/lu";
 import { IoCheckmarkDoneCircle } from "react-icons/io5";
-import { BsCurrencyDollar } from "react-icons/bs";
+import CourseCard from "../course card/CourseCard";
 function Cards() {
 
-  const navigate = useNavigate();
 
   return (
     <div className="courses-section">
-      <h1 className="courses-section-header">Enroll your favorite courses</h1>
+      <h1 className="courses-section-header" id="courses">Enroll your favorite courses</h1>
       <div className="courses-titles">
         <Link className="course-btn">Web development</Link>
         <Link className="course-btn">Skill Building</Link>
@@ -24,82 +21,12 @@ function Cards() {
         <Link className="course-btn">Services for Teachers</Link>
       </div>
       <div className="courses-cards">
-        <div className="card">
-          <div className="upper-section">
-            <img src={html} />
-          </div>
-          <div className="bottom-section">
-            <div className="left-side">
-              <div className="left-side-item">
-                <FaVideo size={15} color="#6882AF" />
-                <p>40 live videos</p>
-              </div>
-              <div className="left-side-item">
-                <LuClock9 size={15} color="#6882AF" />
-                <p>3 months duration</p>
-              </div>
-            </div>
-            <div className="right-side">
-              <div className="right-side-item">
-                <BsCurrencyDollar size={13} color="#6882AF" />
-                <p>course 120$</p>
-              </div>
-              <button onClick={() => navigate('/0')}>Enroll now</button>
-            </div>
-          </div>
-        </div>
+        <CourseCard photo={html} price={120} duration={'3 months'} videoCount={40} navigateTo={'0'} />
 
-        <div className="card">
-          <div className="upper-section">
-            <img src={css} />
-          </div>
-          <div className="bottom-section">
-            <div className="left-side">
-              <div className="left-side-item">
-                <FaVideo size={15} color="#6882AF" />
-                <p>40 live videos</p>
-              </div>
-              <div className="left-side-item">
-                <LuClock9 size={15} color="#6882AF" />
-                <p>3 months duration</p>
-              </div>
-            </div>
-            <div className="right-side">
-              <div className="right-side-item">
-                <BsCurrencyDollar size={13} color="#6882AF" />
-                <p>course 120$</p>
-              </div>
-              <button onClick={() => navigate('/2')}>Enroll now</button>
-            </div>
-          </div>
-        </div>
+        <CourseCard photo={css} price={120} duration={'3 months'} videoCount={40} navigateTo={'2'}/>
 
-        <div className="card">
-          <div className="upper-section">
-            <img src={js} />
-          </div>
-
-          <div className="bottom-section">
-            <div className="left-side">
-              <div className="left-side-item">
-                <FaVideo size={15} color="#6882AF" />
-                <p>40 live videos</p>
-              </div>
-              <div className="left-side-item">
-                <LuClock9 size={15} color="#6882AF" />
-                <p>3 months duration</p>
-              </div>
-            </div>
-            <div className="right-side">
-              <div className="right-side-item">
-                <BsCurrencyDollar size={13} color="#6882AF" />
-                <p>course 120$</p>
-              </div>
-              <button onClick={() => navigate('/1')}>Enroll now</button>
-            </div>
-          </div>
+        <CourseCard photo={js} price={120} duration={'3 months'} videoCount={40} navigateTo={'1'}/>
         </div>
-      </div>
       <div className="features">
         <div className="left-side">
           <h1 className="features-title">

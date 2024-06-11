@@ -92,7 +92,7 @@
 .intro-container section .section-right-side img{
     width:70%;
     border-radius: 5px;
-    rotate: -5deg;
+    /* rotate: -5deg; */
 }
 .intro-container section .section-left-side {
     width: 50%;
@@ -104,6 +104,38 @@
     color: #092167;
     font-weight: 800;
 }
+
+.section-left-side .section-search-course {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-top: 20px;
+}.section-left-side .section-search-course .search-course-input{
+    height: 35px;
+    width: 100%;
+    border: 1px solid #556E9D;
+    padding-left: 10px;
+    border-radius: 20px;
+    outline: none;
+}
+.section-left-side .section-search-course .search-course-btn{
+    height: 35px;
+    width: 50px;
+    cursor: pointer;
+    border: none;
+    border-radius: 20px;
+    background: #005DFF;
+    transition:  .3s;
+}
+.section-left-side .section-search-course .search-course-btn:hover{
+    transition: .3s;
+    transform: scale(1.03);
+}
+.section-left-side .section-search-course .search-course-btn .search-course-btn-icon{
+    background: transparent;
+}
+
+
 .intro-container section .section-left-side h2{
     font-size: 20px;
     color: #092167;
@@ -380,9 +412,14 @@
 .intro-container section .section-left-side{
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: start;
     width: 100%;
 }
+
+.intro-container section .section-left-side h1 {
+    font-size: 30px;
+}
+
 .intro-container section .section-left-side h2{
     color: #092167;
     margin-bottom: 10px;

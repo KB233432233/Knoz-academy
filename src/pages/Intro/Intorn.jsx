@@ -1,81 +1,25 @@
 import './intor.css'
-import logo from '../../assets/logo.png'
-import landing from '../../assets/landing.jpg'
-import { Link } from 'react-router-dom'
-import { useEffect , useState } from 'react'
-import { IoMdClose } from 'react-icons/io'
-import { IoIosMenu } from 'react-icons/io'
+import landing from '../../assets/study.jpg'
+import { useNavigate } from 'react-router-dom'
+import {CiSearch} from 'react-icons/ci'
+import { useCourses } from '../../context/CoursesContext'
+import { useState } from 'react'
 
 function Intorn() {
-    const [windowSize, setWindowSize] = useState(0);
-    useEffect(() => {
-      setWindowSize(window.screen.width);
-      console.log(windowSize);
-    });
 
-   function closeMenu () {
-        document.querySelector(".mob-screen-links").style.display = 'none'
-        document.querySelector(".mob-screen-links").style.transition = '0.3s';
-   } 
-   function openMenu() {
-     document.querySelector(".mob-screen-links").style.display = "flex";
-   } 
+ const navigate = useNavigate()
+ const {courses,setCourse} = useCourses();
+ const [search_word,setSearch_word] = useState('');
+
+ const handleSearch = () => {
+    const course = courses.find((e) => e.course_name == search_word)
+    course ?  setCourse(course) : setCourse('no courses found')
+    navigate(`/search`);
+ }
+
 
   return (
     <div className="intro-container">
-      {windowSize > 670 ? (
-        <header className="header">
-          <div className="left-side">
-            <img src={logo} alt="" className="logo" />
-            <ul className="links">
-              <li className="link">
-                <Link>Home</Link>
-              </li>
-              <li className="link">
-                <Link>Courses</Link>
-              </li>
-              <li className="link">
-                <Link>Kids courses</Link>
-              </li>
-              <li className="link">
-                <Link>Contact us</Link>
-              </li>
-              <li className="link">
-                <Link>Language</Link>
-              </li>
-            </ul>
-          </div>
-          <button className="login-btn">Login</button>
-        </header>
-      ) : (
-        <header className="mob-screen">
-          <img src={logo} alt="" className="logo" />
-          <ul className="mob-screen-links">
-            <li>
-              <Link>Home</Link>
-            </li>
-            <li>
-              <Link>Courses</Link>
-            </li>
-            <li>
-              <Link>Kids courses</Link>
-            </li>
-            <li>
-              <Link>Contact us</Link>
-            </li>
-            <li>
-              <Link>Language</Link>
-            </li>
-            <button className="login-btn">Login</button>
-            <button className="close-mob-menu" onClick={closeMenu}>
-              <IoMdClose size={18} color="gray" />
-            </button>
-          </ul>
-          <button onClick={openMenu} className="open-menu">
-            <IoIosMenu size={30} color="gray" />
-          </button>
-        </header>
-      )}
       <section>
         <div className="section-left-side">
           <h1>Knoz Academy</h1>
@@ -89,6 +33,12 @@ function Intorn() {
             Building the skills and awareness needed for a better future for
             your little ones starts here
           </p>
+          <div className="section-search-course">
+            <input type="text" placeholder='search a course' className='search-course-input' value={search_word} onChange={(e) => setSearch_word(e.target.value)}/>
+            <button className='search-course-btn' onClick={() => handleSearch()}>
+            <CiSearch className='search-course-btn-icon'  size={20} color='white'/>
+            </button>
+          </div>
         </div>
         <div className="section-right-side">
           <img src={landing} />
