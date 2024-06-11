@@ -17,7 +17,7 @@ function PageLayout() {
     });
     
     const isRegistered = () => {
-      return JSON.parse(localStorage.getItem('knoz-user')).token ? true : false;
+      return JSON.parse(localStorage.getItem('knoz-user')) ? true : false;
     }
 
    function closeMenu () {
