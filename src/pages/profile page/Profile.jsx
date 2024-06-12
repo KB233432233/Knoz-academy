@@ -17,8 +17,8 @@ function Profile() {
           const [user,setUser] = useState({});
 
           const getUser = async () => {
-            const token = JSON.parse(localStorage.getItem('knoz-student-token')).token
-            const id = JSON.parse(localStorage.getItem('knoz-student-token')).user.id
+            const token = JSON.parse(localStorage.getItem('knoz-user')).token
+            const id = JSON.parse(localStorage.getItem('knoz-user')).user.id
             const user2 = await axios.get('/account/get-current-user/' + id, {headers: {
               Authorization : token
             }})
